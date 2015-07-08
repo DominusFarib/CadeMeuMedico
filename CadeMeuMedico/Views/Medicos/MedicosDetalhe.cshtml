@@ -1,0 +1,86 @@
+﻿@model CadeMeuMedico.Models.Medicos
+
+@{
+    ViewBag.Title = "Perfil Profissional";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<h2>Perfil Profissional</h2>
+
+<fieldset class="table-striped">
+    <legend>Medico</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.CRM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CRM)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Endereco)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Bairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bairro)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.AtendePorConvenio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AtendePorConvenio)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.TemClinica)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TemClinica)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.WebsiteBlog)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WebsiteBlog)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FKCidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FKCidade)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Especialidades.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Especialidades.Nome)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "MedicosEdit", new { id = Model.IDMedico }) |
+    @Html.ActionLink("Voltar à lista", "Index")
+</p>
