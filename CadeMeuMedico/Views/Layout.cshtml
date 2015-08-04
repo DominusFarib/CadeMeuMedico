@@ -33,23 +33,20 @@
                             @Html.ActionLink("Especialidades", "Index", "Especialidades")
                         </li>
                     </ul>
+                    <span class ="label label-info lg">@ViewData["UserName"]</span>
                 </div>
             </div>
         </div>
-        
-        <div class="container">
-            @RenderBody()
-        </div>
-
         <script src="@Url.Content("~/Scripts/jquery-2.1.4.min.js")"> </script>
         <script src="@Url.Content("~/Scripts/bootstrap.min.js")"> </script>
         <script src="@Url.Content("~/Scripts/geral.js")"> </script>
         <script src="@Url.Content("~/Scripts/Validacao/validate.js")"> </script>
 
-        @section Scripts {
-            @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
-        }
-
         @RenderSection("script", required: false)
+        
+        <div class="container">
+            @RenderBody()
+        </div>
+
     </body>
 </html>

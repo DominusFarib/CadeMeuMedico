@@ -30,8 +30,8 @@
                     $("#status").show();
                 }
             },
-            error: function () {
-                $("#status").html(dados.Mensagem);
+            error: function (dados) {
+                $("#status").html(dados);
                 $("#status").show()
             }
         });

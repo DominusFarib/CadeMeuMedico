@@ -18,7 +18,7 @@ namespace CadeMeuMedico.Acessos
             var Controller = FiltroDeContexto.ActionDescriptor.ControllerDescriptor.ControllerName;
             var Action = FiltroDeContexto.ActionDescriptor.ActionName;
 
-            if (Controller != "Home" || Action != "Login")
+            if (Controller != "Home" && Action != "Login" && Action != "Esqueci")
             {
                 // VERIFICA SE O USUARIO JÁ ESTÁ LOGADO
                 if (RepositorioUsuarios.VerificaUsuarioLogado() == null)

@@ -14,6 +14,5 @@ namespace CadeMeuMedico.Controllers
         {
             base.OnActionExecuting(filterContext);
         }
-
     }
 }

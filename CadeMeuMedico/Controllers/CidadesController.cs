@@ -8,11 +8,7 @@ using CadeMeuMedico.Models;
 namespace CadeMeuMedico.Controllers
 {
     public class CidadesController : BaseController
-{
     {
-        //
-        // GET: /Cidades/
-
         private CadeMeuMedicoBDEntities baseDados = new CadeMeuMedicoBDEntities();
 
         public ActionResult Index()
@@ -80,6 +76,5 @@ namespace CadeMeuMedico.Controllers
                 return Boolean.FalseString;
             }
         }
-
     }
 }

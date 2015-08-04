@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -27,11 +28,6 @@ namespace CadeMeuMedico.Models
         [RegularExpression(@"[a-zA-Z0-9]*", ErrorMessage="Na senha somente são permitidos caracteres alfanuméricos")]
         [Display(Name = "Senha")]
         public string Senha { get; set; }
-
-        [DataType(DataType.Password)]
-        [Compare("Senha", ErrorMessage = "A senha e a confirmação de senha não conferem.")]
-        [Display(Name = "Confirme a senha")]
-        public string ConfirmaSenha { get; set; }
 
         [Display(Name = "E-mail")]
         //[RegularExpression(@"^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$", ErrorMessage = "Informe um email válido")]

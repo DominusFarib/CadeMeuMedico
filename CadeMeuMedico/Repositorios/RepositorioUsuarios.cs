@@ -52,6 +52,22 @@ namespace CadeMeuMedico.Repositorios
             }
         }
 
+        public static Usuarios GetUsuarioPorEmail(string email)
+        {
+            try
+            {
+                using (CadeMeuMedicoBDEntities db = new CadeMeuMedicoBDEntities())
+                {
+                    var Usuario = db.Usuarios.Where(u => u.Email == email).SingleOrDefault();
+                    return Usuario;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public static Usuarios VerificaUsuarioLogado()
         {
             var Usuario = HttpContext.Current.Request.Cookies["UserCookieAuthentication"];

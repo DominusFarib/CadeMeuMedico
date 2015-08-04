@@ -14,6 +14,9 @@ namespace CadeMeuMedico.Repositorios
 
             //Setando o ID do usuário no cookie
             UserCookie.Values["IDUsuario"] = CadeMeuMedico.Repositorios.RepositorioCriptografia.Criptografar(IDUsuario.ToString());
+            
+            //Setando o Nome do usuário no cookie
+            UserCookie.Values["Usuario"] = CadeMeuMedico.Repositorios.RepositorioUsuarios.GetUsuarioPorID(IDUsuario).Nome;
 
             //Definindo o prazo de vida do cookie
             UserCookie.Expires = DateTime.Now.AddDays(1);

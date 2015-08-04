@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace CadeMeuMedico.Controllers
 {
-    public class UsuariosController : BaseController
+    public class UsuariosController : Controller
     {
         //
         // GET: /Usuarios/
