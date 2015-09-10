@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     [MetadataType(typeof(CidadesMetadados))]
     public partial class Cidades

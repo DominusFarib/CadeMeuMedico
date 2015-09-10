@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     [MetadataType(typeof(UsuariosMetadados))]
     public partial class Usuarios

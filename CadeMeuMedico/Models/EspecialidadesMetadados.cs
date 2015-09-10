@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     [MetadataType(typeof(EspecialidadesMetadados))]
     public partial class Especialidades

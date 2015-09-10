@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CadeMeuMedicoBDEntities : DbContext
+    public partial class MembroIndependenteBDEntities : DbContext
     {
-        public CadeMeuMedicoBDEntities()
-            : base("name=CadeMeuMedicoBDEntities")
+        public MembroIndependenteBDEntities()
+            : base("name=MembroIndependenteBDEntities")
         {
         }
     

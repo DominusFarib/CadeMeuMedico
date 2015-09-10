@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="CadeMeuMedicoBDModelStoreContainer" CdmEntityContainer="CadeMeuMedicoBDEntities">
+  <EntityContainerMapping StorageEntityContainer="MembroIndependenteBDModelStoreContainer" CdmEntityContainer="MembroIndependenteBDEntities">
     <EntitySetMapping Name="BannersPublicitarios">
-      <EntityTypeMapping TypeName="CadeMeuMedicoBDModel.BannersPublicitarios">
+      <EntityTypeMapping TypeName="MembroIndependenteBDModel.BannersPublicitarios">
         <MappingFragment StoreEntitySet="BannersPublicitarios">
           <ScalarProperty Name="LinkBanner" ColumnName="LinkBanner" />
           <ScalarProperty Name="CampanhaBanner" ColumnName="CampanhaBanner" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cidades">
-      <EntityTypeMapping TypeName="CadeMeuMedicoBDModel.Cidades">
+      <EntityTypeMapping TypeName="MembroIndependenteBDModel.Cidades">
         <MappingFragment StoreEntitySet="Cidades">
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="IDCidade" ColumnName="IDCidade" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Especialidades">
-      <EntityTypeMapping TypeName="CadeMeuMedicoBDModel.Especialidades">
+      <EntityTypeMapping TypeName="MembroIndependenteBDModel.Especialidades">
         <MappingFragment StoreEntitySet="Especialidades">
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="IDEspecialidade" ColumnName="IDEspecialidade" />
@@ -28,8 +28,9 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Medicos">
-      <EntityTypeMapping TypeName="CadeMeuMedicoBDModel.Medicos">
+      <EntityTypeMapping TypeName="MembroIndependenteBDModel.Medicos">
         <MappingFragment StoreEntitySet="Medicos">
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
           <ScalarProperty Name="FKEspecialidade" ColumnName="FKEspecialidade" />
           <ScalarProperty Name="FKCidade" ColumnName="FKCidade" />
           <ScalarProperty Name="WebsiteBlog" ColumnName="WebsiteBlog" />
@@ -45,7 +46,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuarios">
-      <EntityTypeMapping TypeName="CadeMeuMedicoBDModel.Usuarios">
+      <EntityTypeMapping TypeName="MembroIndependenteBDModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Senha" ColumnName="Senha" />

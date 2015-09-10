@@ -2,15 +2,15 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Data.Entity;
-using CadeMeuMedico.Models;
-using CadeMeuMedico.Repositorios;
+using MembroIndependente.Models;
+using MembroIndependente.Repositorios;
 using System.Net.Mail;
 
-namespace CadeMeuMedico.Controllers
+namespace MembroIndependente.Controllers
 {
     public class ContasController : BaseController
     {
-        private CadeMeuMedicoBDEntities baseDados = new CadeMeuMedicoBDEntities();
+        private MembroIndependenteBDEntities baseDados = new MembroIndependenteBDEntities();
 
         public ActionResult Index()
         {

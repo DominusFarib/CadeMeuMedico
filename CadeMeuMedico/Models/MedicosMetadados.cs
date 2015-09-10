@@ -3,8 +3,10 @@ using System.Web;
 using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using MembroIndependente.Repositorios;
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     [MetadataType(typeof(MedicosMetadados))]
     public partial class Medicos
@@ -21,6 +23,15 @@ namespace CadeMeuMedico.Models
         [StringLength(80, ErrorMessage = "O Nome deve possuir no máximo 80 caracteres")]
         public string Nome { get; set; }
         
+        // [FileExtensions(ErrorMessage = "Arquivo de foto não é válido, envie imgens com as seguinte extenções(jpg, jpeg, png)", Extensions = "jpg,jpeg,png,bmp")]
+        // [ValidaArquivo(Extensoes = new string[] { ".bmp", ".gif", ".png", ".jpeg", ".jpg" }, TamanhoMax = 1024 * 1024 * 3, TamanhoMin = 1024 * 100, ErrorMessage = "O arquivo/imagem deve ter o tamanho máximo de 3M, por favor, tente novamente !")]
+        [NotMapped]
+        [Display(Name = "Perfil")]
+        [DataType(DataType.Upload)]
+        [TamanhoMaximo(10240)]
+        [Extensoes("jpg,jpeg,png,bmp,gif")]
+        private HttpPostedFileBase Imagem { get; set; }
+
         [Required(ErrorMessage = "Obrigatório informar o Endereço")]
         [StringLength(100, ErrorMessage = "O Endereço deve possuir no máximo 100 caracteres")]
         public string Endereco { get; set; }
@@ -47,5 +58,8 @@ namespace CadeMeuMedico.Models
         
         [Required(ErrorMessage = "Obrigatório informar a Especialidade")]
         public int FKEspecialidade { get; set; }
+
+
+
     }
 }

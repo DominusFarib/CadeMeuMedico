@@ -14,4 +14,35 @@
             $(this).removeClass("btn-danger");
         }
     );
+
+    $(".btn-apagar").click(function () {
+        var pai = $(this).parent();
+        if(confirm("Deseja realmente excluir este Membro?")){
+            $.ajax({
+                method: "POST",
+                url: "/Medicos/MedicosDelet/",
+                //data: { ID: "35" }
+                data: { ID: $(this).attr("dataref") }
+            }).done(function (dados) {
+                if (dados.erro != "") {
+                    pai.parent().parent().prepend('<tr class="alerta"><td colspan="7"> <div class="editor-field alert alert-danger fade in"><a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>' + dados.erro + '</div></td></tr>');
+                }
+                else {
+                    $('<tr class="alerta"><td colspan="7"> <div class="editor-field alert alert-success fade in">  <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> ' + dados.msg + ' </div></td></tr>').insertAfter(pai.parent());
+                    pai.parent().remove();
+                }
+            });
+        }else
+        {
+            return false;
+        }
+    });
+
+    $(document).on("click", ".alerta", function (e) {
+        if (e.target.className == "close") {
+            $(this).fadeOut(500, function () { $(this).remove(); });
+        }
+    });
+
+
 });

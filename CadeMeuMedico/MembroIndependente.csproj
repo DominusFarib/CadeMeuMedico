@@ -157,6 +157,7 @@
       <DependentUpon>ModeloDeDadosContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MedicosMetadados.cs" />
+    <Compile Include="Models\MembrosModel.cs" />
     <Compile Include="Models\ModeloDeDados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +191,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CropImage\cropImages.css" />
     <Content Include="Content\Validacao\senhas.css" />
     <Content Include="Imagens\banner-cdc-cademeumedico.png" />
     <Content Include="Imagens\logo-conio-cademeumedico.png" />
@@ -222,6 +224,7 @@
     </Content>
     <Content Include="App_Code\TwitterGoodies.cshtml" />
     <Content Include="Areas\MobilesArea\Views\Web.config" />
+    <Content Include="Scripts\CropImages\jquery.cropit.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="faveicon.ico" />
@@ -236,7 +239,9 @@
     <Content Include="Scripts\Validacao\login.js" />
     <Content Include="Scripts\Validacao\senhas.js" />
     <Content Include="Scripts\Validacao\validate.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -267,6 +272,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\MobilesArea\Models\" />
     <Folder Include="bin\" />
+    <Folder Include="Content\Perfis\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

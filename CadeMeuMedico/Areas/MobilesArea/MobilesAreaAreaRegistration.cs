@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace CadeMeuMedico.Areas.MobilesArea
+namespace MembroIndependente.Areas.MobilesArea
 {
     public class MobilesAreaAreaRegistration : AreaRegistration
     {

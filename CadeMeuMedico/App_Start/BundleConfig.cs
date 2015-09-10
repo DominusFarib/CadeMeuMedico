@@ -1,5 +1,5 @@
 ﻿using System.Web.Optimization;
-namespace CadeMeuMedico.App_Start
+namespace MembroIndependente.App_Start
 {
     public class BundleConfig
     {

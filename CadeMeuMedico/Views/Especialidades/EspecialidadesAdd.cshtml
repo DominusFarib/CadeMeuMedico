@@ -1,4 +1,4 @@
-﻿@model CadeMeuMedico.Models.Cidades
+﻿@model MembroIndependente.Models.Especialidades
 
 @{
     ViewBag.Title = "EspecialidadesAdd";
@@ -15,11 +15,11 @@
         <legend>Cidades</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IDCidade)
+            @Html.LabelFor(model => model.IDEspecialidade)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.IDCidade)
-            @Html.ValidationMessageFor(model => model.IDCidade)
+            @Html.EditorFor(model => model.IDEspecialidade)
+            @Html.ValidationMessageFor(model => model.IDEspecialidade)
         </div>
 
         <div class="editor-label">

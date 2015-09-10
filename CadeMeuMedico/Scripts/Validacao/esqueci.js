@@ -31,7 +31,6 @@
                 }
             },
             error: function (xhr, ajaxOptions, thrownError) {
-                //alert('error');
                 console.log(xhr.status);
                 console.log(thrownError);
             }

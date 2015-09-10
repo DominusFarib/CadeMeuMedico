@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CadeMeuMedico.Repositorios
+namespace MembroIndependente.Repositorios
 {
     public class RepositorioCookies
     {
@@ -13,10 +13,10 @@ namespace CadeMeuMedico.Repositorios
             HttpCookie UserCookie = new HttpCookie("UserCookieAuthentication");
 
             //Setando o ID do usuário no cookie
-            UserCookie.Values["IDUsuario"] = CadeMeuMedico.Repositorios.RepositorioCriptografia.Criptografar(IDUsuario.ToString());
+            UserCookie.Values["IDUsuario"] = MembroIndependente.Repositorios.RepositorioCriptografia.Criptografar(IDUsuario.ToString());
             
             //Setando o Nome do usuário no cookie
-            UserCookie.Values["Usuario"] = CadeMeuMedico.Repositorios.RepositorioUsuarios.GetUsuarioPorID(IDUsuario).Nome;
+            UserCookie.Values["Usuario"] = MembroIndependente.Repositorios.RepositorioUsuarios.GetUsuarioPorID(IDUsuario).Nome;
 
             //Definindo o prazo de vida do cookie
             UserCookie.Expires = DateTime.Now.AddDays(1);

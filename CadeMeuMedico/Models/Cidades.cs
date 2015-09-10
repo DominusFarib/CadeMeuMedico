@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     using System;
     using System.Collections.Generic;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CadeMeuMedicoBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="MembroIndependenteBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="BannersPublicitarios">
     <Key>
       <PropertyRef Name="IDBanner" />
@@ -38,6 +38,7 @@
     <Property Name="WebsiteBlog" Type="varchar" MaxLength="80" />
     <Property Name="FKCidade" Type="int" Nullable="false" />
     <Property Name="FKEspecialidade" Type="int" Nullable="false" />
+    <Property Name="Foto" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>
@@ -73,7 +74,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CadeMeuMedicoBDModelStoreContainer">
+  <EntityContainer Name="MembroIndependenteBDModelStoreContainer">
     <EntitySet Name="BannersPublicitarios" EntityType="Self.BannersPublicitarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cidades" EntityType="Self.Cidades" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Especialidades" EntityType="Self.Especialidades" Schema="dbo" store:Type="Tables" />

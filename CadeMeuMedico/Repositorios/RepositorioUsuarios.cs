@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using CadeMeuMedico.Models;
+using MembroIndependente.Models;
 
-namespace CadeMeuMedico.Repositorios
+namespace MembroIndependente.Repositorios
 {
     public class RepositorioUsuarios
     {
         public static bool AutenticarUsuario(string Login, string Senha)
         {
-            var SenhaCriptografada = CadeMeuMedico.Repositorios.RepositorioCriptografia.CriptografaSHA1(Senha);
+            var SenhaCriptografada = MembroIndependente.Repositorios.RepositorioCriptografia.CriptografaSHA1(Senha);
 
             try
             {
-                using (CadeMeuMedicoBDEntities db = new CadeMeuMedicoBDEntities())
+                using (MembroIndependenteBDEntities db = new MembroIndependenteBDEntities())
                 {
                     var QueryAutenticaUsuarios = db.Usuarios.Where(x => x.Login == Login && x.Senha == SenhaCriptografada).SingleOrDefault();
 
@@ -40,7 +40,7 @@ namespace CadeMeuMedico.Repositorios
         {
             try
             {
-                using (CadeMeuMedicoBDEntities db = new CadeMeuMedicoBDEntities())
+                using (MembroIndependenteBDEntities db = new MembroIndependenteBDEntities())
                 {
                     var Usuario = db.Usuarios. Where(u => u.IDUsuario == IDUsuario).SingleOrDefault();
                     return Usuario;
@@ -56,7 +56,7 @@ namespace CadeMeuMedico.Repositorios
         {
             try
             {
-                using (CadeMeuMedicoBDEntities db = new CadeMeuMedicoBDEntities())
+                using (MembroIndependenteBDEntities db = new MembroIndependenteBDEntities())
                 {
                     var Usuario = db.Usuarios.Where(u => u.Email == email).SingleOrDefault();
                     return Usuario;

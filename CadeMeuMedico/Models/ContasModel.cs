@@ -1,7 +1,7 @@
-﻿using CadeMeuMedico.Repositorios;
+﻿using MembroIndependente.Repositorios;
 using System.ComponentModel.DataAnnotations;
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     public class ContasModel
     {

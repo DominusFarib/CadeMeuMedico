@@ -2,14 +2,14 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Data.Entity;
-using CadeMeuMedico.Models;
+using MembroIndependente.Models;
 
 
-namespace CadeMeuMedico.Controllers
+namespace MembroIndependente.Controllers
 {
     public class CidadesController : BaseController
     {
-        private CadeMeuMedicoBDEntities baseDados = new CadeMeuMedicoBDEntities();
+        private MembroIndependenteBDEntities baseDados = new MembroIndependenteBDEntities();
 
         public ActionResult Index()
         {

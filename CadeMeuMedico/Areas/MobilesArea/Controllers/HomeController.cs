@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CadeMeuMedico.Areas.MobilesArea.Controllers
+namespace MembroIndependente.Areas.MobilesArea.Controllers
 {
     public class HomeController : Controller
     {

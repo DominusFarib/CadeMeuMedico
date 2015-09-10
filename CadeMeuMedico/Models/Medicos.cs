@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CadeMeuMedico.Models
+namespace MembroIndependente.Models
 {
     using System;
     using System.Collections.Generic;
@@ -25,6 +25,7 @@ namespace CadeMeuMedico.Models
         public string WebsiteBlog { get; set; }
         public int FKCidade { get; set; }
         public int FKEspecialidade { get; set; }
+        public string Foto { get; set; }
     
         public virtual Cidades Cidades { get; set; }
         public virtual Especialidades Especialidades { get; set; }
