@@ -1,0 +1,41 @@
+﻿@model MembroIndependente.Models.Especialidades
+
+@{
+    ViewBag.Title = "EspecialidadesAdd";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<h2>EspecialidadesAdd</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cidades</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDEspecialidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDEspecialidade)
+            @Html.ValidationMessageFor(model => model.IDEspecialidade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <p>
+            <input type="submit" value="Cadastrar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

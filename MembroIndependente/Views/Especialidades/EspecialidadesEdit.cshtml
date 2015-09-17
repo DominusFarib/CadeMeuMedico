@@ -1,0 +1,34 @@
+﻿@model MembroIndependente.Models.Especialidades
+
+@{
+    ViewBag.Title = "Editar Especialidade";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<h2>Editar Especialidade</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>Especialidade</legend>
+        <div class="editor-label">
+            @Html.HiddenFor(model => model.IDEspecialidade)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

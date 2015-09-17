@@ -1,0 +1,98 @@
+﻿@model MembroIndependente.Models.ContasModel
+
+@{
+    ViewBag.Title = "Novo Usu&aacute;rio";
+}
+
+<h2>Novo Usuário</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UsuariosMetadados</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Login)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Login)
+            @Html.ValidationMessageFor(model => model.Login)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Senha)
+        </div>
+        <div class="editor-field" id="pwd-container">
+            <div class="col-sm-2" style="padding:0; display:block">
+                @Html.PasswordFor(model => model.Senha, new { @placeholder = "Digite uma Senha" })
+                @Html.ValidationMessageFor(model => model.Senha)
+            </div>
+            <div id="forcaSenha" style="display:block; width: 300px; margin-top:10px;"></div>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfirmaSenha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfirmaSenha)
+            @Html.ValidationMessageFor(model => model.ConfirmaSenha)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <p>
+            <input type="submit" value="Cadastrar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+<script src="@Url.Content("~/Scripts/Validacao/senhas.js")"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+
+        if ('@ViewBag.Mensagem'.length > 1) {
+            alert('@ViewBag.Mensagem');
+        }
+
+        $("#forcaSenha").html("");
+
+        var opcoes = {};
+        opcoes.ui = {
+            container: "#pwd-container",
+            showVerdictsInsideProgressBar: true,
+            viewports: {
+                progress: "#forcaSenha"
+            }
+        };
+
+        opcoes.common = {
+            debug: true,
+            onLoad: function () {
+            }
+        };
+
+        $(':password').pwstrength(opcoes);
+        $('#forcaSenha div:nth-child(2)').remove();
+
+    });
+</script>
+

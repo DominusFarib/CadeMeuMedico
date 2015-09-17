@@ -1,0 +1,138 @@
+﻿@model MembroIndependente.Models.Medicos
+
+@{
+    ViewBag.Title = "Perfil Profissional";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<h2>Perfil Profissional</h2>
+<fieldset class="table-striped">
+    <legend>Medico</legend>
+    <div class="grid table table-striped">
+        <img src="@Html.DisplayFor(model => model.Foto)" />
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.Nome)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.CRM)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.CRM)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.Endereco)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.Endereco)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.Bairro)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.Bairro)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.AtendePorConvenio)
+            </div>
+            <div class="col-md-8">
+                @if (ViewData.Model.AtendePorConvenio)
+                {
+                    <text>
+                        Sim
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        Não
+                    </text>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.TemClinica)
+            </div>
+            <div class="col-md-8">
+                @if (ViewData.Model.TemClinica)
+                {
+                    <text>
+                        Sim
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        Não
+                    </text>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.WebsiteBlog)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.WebsiteBlog)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.FKCidade)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.Cidades.Nome)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.DisplayNameFor(model => model.FKEspecialidade)
+            </div>
+            <div class="col-md-8">
+                @Html.DisplayFor(model => model.Especialidades.Nome)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="/Medicos" class="btn btn-sm btn-default">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a href="/Medicos/MedicosEdit/@Html.DisplayFor(model => model.IDMedico)" class="btn btn-sm btn-primary">Editar</a>
+            </div>
+        </div>
+    </div>
+
+
+</fieldset>

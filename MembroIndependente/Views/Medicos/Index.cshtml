@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MembroIndependente.Models.Medicos>
+
+@{
+    ViewBag.Title = "Medicos";
+}
+
+<h2>Lista de m&eacute;dicos</h2>
+
+<p>
+    @Html.ActionLink("+ Novo", "MedicosAdd", null, new { @class = "btn btn-info" })
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CRM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especialidades)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidades)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.OrderBy(x=>x.Nome))
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Foto)" class="img-thumbnail" style="max-height: 115px; max-width: 100%;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especialidades.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidades.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "MedicosEdit", new { id = item.IDMedico }, new { @class = "btn btn-sm btn-default btn-editar" }) 
+                @Html.ActionLink("Detalhes", "MedicosDetalhe", new { id = item.IDMedico }, new { @class = "btn btn-sm btn-default btn-detalhar" }) 
+                @*@Html.ActionLink("Apagar", "MedicosDelet", new { id = item.IDMedico }, new { @class = "btn btn-sm btn-default btn-apagar" })*@
+                <a id="deleteMember" class="btn btn-sm btn-apagar btn-default" dataref="@item.IDMedico">Apagar</a>
+            </td>
+        </tr>
+    }
+
+</table>

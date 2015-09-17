@@ -1,0 +1,260 @@
+﻿@model MembroIndependente.Models.Medicos
+
+@{
+    ViewBag.Title = "Editar Medico";
+    Layout = "~/Views/Layout.cshtml";
+}
+<style>
+    .campos-direita {
+        display: inline-block;
+        /*background-color: aquamarine;*/
+        width: 60%;
+        float: left;
+    }
+
+        .campos-direita #Nome,
+        .campos-direita #Email,
+        .campos-direita #FKEspecialidade,
+        .campos-direita #WebsiteBlog,
+        .campos-baixo #Endereco, .campos-baixo #Bairro, .campos-baixo #FKCidade {
+            width: 500px;
+            margin-bottom: 10px;
+            padding: 1px 0px;
+        }
+
+    .campos-baixo {
+        display: block;
+        width: 100%;
+        float: left;
+    }
+
+
+
+    #image-cropper {
+        float: left;
+        width: 180px;
+        height: 260px;
+        display: inline-block;
+        /*/background-color: beige;*/
+    }
+
+    .cropit-image-preview {
+        background-color: #f8f8f8;
+        background-size: cover;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 150px;
+        height: 150px;
+        cursor: move;
+    }
+
+    .cropit-image-zoom-input {
+        width: 150px !important;
+    }
+
+    .cropit-image-background {
+        opacity: .2;
+        cursor: auto;
+    }
+
+    .image-size-label {
+        margin-top: 10px;
+    }
+
+    input {
+        display: block;
+    }
+
+    button[type="submit"] {
+        margin-top: 10px;
+    }
+
+    #result {
+        margin-top: 10px;
+        width: 900px;
+    }
+
+    #result-data {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+    }
+
+    .cropit-image-input {
+        visibility: hidden;
+    }
+</style>
+
+<h2>Editar Medico</h2>
+@using (Html.BeginForm("MedicosEdit", "Medicos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Medicos</legend>
+        <div class="grid">
+            @if (ViewData.ModelState["Imagem"] != null)
+            {
+                <div class="editor-field alert alert-danger fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <strong>Falha!</strong> @Html.ValidationMessageFor(model => model.Foto)
+                </div>
+            }
+
+            <div id="image-cropper">
+                <div class="editor-label">
+                    <label for="Imagem">Foto</label>
+                </div>
+
+                <div class="cropit-image-preview"></div>
+
+                <input type="range" class="cropit-image-zoom-input" />
+                <input type="hidden" name="image-data" class="hidden-image-data" />
+
+                <input id="Imagem" name="Imagem" type="file" class="cropit-image-input" />
+                <div class="findimage btn btn-sm btn-info"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp; Trocar foto</div>
+            </div>
+            <div class="campos-direita">
+                @Html.HiddenFor(model => model.IDMedico)
+
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CRM)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CRM)
+                    @Html.ValidationMessageFor(model => model.CRM)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nome)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Nome)
+                    @Html.ValidationMessageFor(model => model.Nome)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <div class="editor-label">
+                    <label for="WebsiteBlog">Web site/Blog</label>
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.WebsiteBlog)
+                    @Html.ValidationMessageFor(model => model.WebsiteBlog)
+                </div>
+
+                <div class="editor-label">
+                    <label for="FKEspecialidade">Especialidade</label>
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("FKEspecialidade", String.Empty)
+                    @Html.ValidationMessageFor(model => model.FKEspecialidade)
+
+                </div>
+
+            </div>
+        </div>
+        <div class="grid">
+            <div class="campos-baixo">
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Endereco)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Endereco)
+                    @Html.ValidationMessageFor(model => model.Endereco)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Bairro)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Bairro)
+                    @Html.ValidationMessageFor(model => model.Bairro)
+                </div>
+
+
+                <div class="editor-label">
+                    <label for="AtendePorConvenio">Atende Convêncios</label>
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.AtendePorConvenio)
+                    @Html.ValidationMessageFor(model => model.AtendePorConvenio)
+                </div>
+
+                <div class="editor-label">
+                    <label for="TemClinica">Possui Clínica própria?</label>
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.TemClinica)
+                    @Html.ValidationMessageFor(model => model.TemClinica)
+                </div>
+
+
+                <div class="editor-label">
+                    <label for="FKCidade">Município</label>
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("FKCidade", String.Empty)
+                    @Html.ValidationMessageFor(model => model.FKCidade)
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="/Medicos" class="btn btn-sm btn-default">
+                            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <button type="submit" class="btn btn-sm btn-primary" value="Salvar" style="margin:0;">
+                            <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Salvar
+                        </button>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </fieldset>
+}
+
+<script src="@Url.Content("~/Scripts/CropImages/jquery.cropit.js")"></script>
+
+<script>
+    $(function () {
+
+@if (ViewData.Model.Foto != string.Empty){
+    <text>
+        $('.cropit-image-preview').css("background-image", "url(@Html.DisplayFor(model => model.Foto))");
+    </text>
+}
+        $('#image-cropper').cropit();
+
+        $('.findimage').click(function () {
+            $('.cropit-image-input').click();
+        });
+
+        $('form').submit(function (event) {
+            var imageData = $('#image-cropper').cropit('export');
+
+            $('.hidden-image-data').val(imageData);
+            return true;
+        });
+    });
+
+
+    </script>
+
+
+
+
+
+
+
